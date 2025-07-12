@@ -47,6 +47,22 @@
       50% { box-shadow: 0 0 35px #FF3526; }
     }
 
+    .kuromi-logo {
+      margin-bottom: 1rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .kuromi-logo img {
+      width: 100px;
+      height: auto;
+      filter: drop-shadow(0 0 6px black);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
     .rainbow-title {
       font-size: 1.5rem;
       font-weight: bold;
@@ -128,6 +144,18 @@
     #start-btn:hover {
       transform: scale(1.05);
     }
+
+    .credit {
+      font-size: 0.6rem;
+      margin-top: 1rem;
+      color: #ccc;
+    }
+
+    .credit a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body>
@@ -135,6 +163,10 @@
   <button id="start-btn">Iniciar</button>
 
   <div class="container" id="invitation">
+    <div class="kuromi-logo">
+      <img src="kuromi.png" alt="Kuromi logo">
+    </div>
+
     <div class="rainbow-title">
       <span>✨</span><span> </span>
       <span>I</span><span>n</span><span>v</span><span>i</span><span>t</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span>
@@ -156,9 +188,12 @@
     <p class="animated-text delay-11 highlight">calle Francisco Villa #63</p>
 
     <div class="bounce">¡NO FALTES TE ESPERAMOS!</div>
+
+    <p class="credit">
+      <a target="_blank" href="https://icons8.com/icon/Dovzd6PbVQqJ/kuromi">Kuromi</a> icono de <a target="_blank" href="https://icons8.com">Icons8</a>
+    </p>
   </div>
 
-  <!-- 🎵 Audio -->
   <audio id="music" src="music.MP3" loop></audio>
 
   <script>
@@ -169,7 +204,7 @@
     startBtn.addEventListener('click', () => {
       startBtn.style.display = 'none';
       container.style.display = 'block';
-      music.volume = 0.04;  // 🔉 volumen al 4%
+      music.volume = 0.3;
       music.play();
     });
   </script>
